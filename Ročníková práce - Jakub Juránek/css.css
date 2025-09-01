@@ -1,0 +1,567 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #f4f4f4;
+}
+
+@media (max-width: 768px) {
+    body {
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    body {
+      font-size: 12px;
+    }
+  }
+
+a {
+    text-decoration: none; 
+    position: relative;
+    color: rgb(255, 255, 255); 
+}
+
+a:not(.stred){
+    text-decoration: none; 
+    position: relative;
+    color: rgb(0, 0, 0); 
+}
+
+
+a:not(.ne):after {
+    content: ''; 
+    position: absolute; 
+    left: 0; 
+    bottom: 0; 
+    width: 100%; 
+    height: 2px; 
+    background: rgb(0, 0, 0);
+    transform: scaleX(0); 
+    transition: transform 0.3s ease; 
+}
+
+a:hover::after {
+    transform: scaleX(1); 
+}
+
+
+.hlnapis {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #c5c4c4;
+    padding: 10px 20px;
+    color: rgb(255, 255, 255);
+}
+
+.leva {
+    display: flex;
+    align-items: center;
+}
+
+
+.sted h1 {
+    font-size: 24px;
+    text-align: center;
+    color: #000;
+}
+
+
+.prava {
+    position: relative;
+}
+
+
+.profil-container {
+    position: relative;
+}
+
+.profil-link img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+
+.dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.profil-container:hover .dropdown {
+    display: block;
+}
+
+.dropdown ul {
+    list-style: none;
+    padding: 10px;
+}
+
+.dropdown li {
+    padding: 5px 10px;
+    white-space: nowrap;
+}
+
+.dropdown li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.dropdown li:hover {
+    background-color: #f0f0f0;
+}
+
+
+button {
+    background-color: #4d4d4d;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+
+
+ul {
+    list-style: none;
+}
+
+ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+ul li a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+}
+
+.hledacipanel {
+    width: 90%;
+    background-color: #f9f9f9; 
+    border-radius: 8px; 
+    padding: 20px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    margin: 20px auto; 
+}
+
+.skupina {
+    display: grid;
+    grid-template-columns: 3fr 3fr 3fr 3fr; 
+    gap: 15px; 
+}
+
+.hledacipanel-item {
+    display: flex;
+    flex-direction: column; 
+}
+
+select {
+    width: 100%; 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    transition: border-color 0.3s; 
+}
+
+select:focus {
+    border-color: #007bff;
+    outline: none; 
+}
+
+
+input[type="number"],
+input[type="number"]:focus,
+
+.rok-vyroby, .cena, .najezd {
+    display: flex; 
+    gap: 10px; 
+}
+
+input[type="number"] {
+    flex: 1; 
+}
+
+
+.hledacipanel label {
+    font-weight: bold; 
+    margin-bottom: 5px;
+}
+
+.hledacipanel select,
+.hledacipanel input[type="number"] {
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px;
+    transition: border-color 0.3s; 
+}
+
+.hledacipanel select:focus,
+.hledacipanel input[type="number"]:focus {
+    border-color: #007bff; 
+}
+
+.hledacipanel input[type="submit"] {
+    background-color: #696969; 
+    color: white; 
+    border: none; 
+    padding: 10px 15px; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    transition: background-color 0.3s;
+}
+
+.hledacipanel input[type="submit"]:hover {
+    background-color: #585858; 
+}
+.card {
+    background-color: white;
+    border: 1px solid #000000;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgb(0, 0, 0);
+    margin: 10px;
+    padding: 15px;
+    transition: transform 0.2s;
+    width: calc(25% - 20px); 
+}
+
+.image-container {
+    width: 100%; 
+    height: 150px; 
+    overflow: hidden; 
+    border-radius: 8px; 
+    position: relative;
+}
+
+.card img {
+    width: auto; 
+    height: 100%; 
+    object-fit: cover; 
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.493);
+
+}
+
+
+@media (max-width: 1200px) {
+    .card {
+        width: calc(33.33% - 20px); 
+    }
+}
+
+@media (max-width: 900px) {
+    .card {
+        width: calc(50% - 20px); 
+    }
+}
+
+@media (max-width: 600px) {
+    .card {
+        width: calc(100% - 20px);
+    }
+}
+.card img {
+    width: 100%; 
+    height: 150px; 
+    object-fit: cover; 
+    border-radius: 8px; 
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+.dalsistranka{
+    text-align: center;
+    margin: 10px auto;
+}
+
+.dalsistranka-grid{
+
+}
+
+.spodek {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    border: 1px solid #000000;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 15px;
+    transition: transform 0.2s;
+}
+
+.pocitadlo {
+    float: right; 
+    color: #333; 
+}
+
+.dolekPridatInzerat{
+    display: flex;
+justify-content: center;
+}
+.grid_pridatinzerat{
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    gap: 15px; 
+}
+.pridatInzerat {
+    background-color: #dddddd; 
+    border: 3px solid black; 
+    border-radius: 10px; 
+    max-width: 600px; 
+    padding: 20px;
+    margin-left: 5px;
+}
+
+.pridatInzerat h4 {
+ color: red;
+}
+
+.pridatInzerat input[type="file"],
+.pridatInzerat input[type="number"],
+.pridatInzerat input[type="text"],
+.pridatInzerat textarea {
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 100%;
+}
+
+.pridatInzerat .upload-button {
+    background-color: #cccccc;
+    border: none;
+    border-radius: 5px;
+    color: #000;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+.pridatInzerat .upload-button:hover {
+    background-color: #bbb;
+}
+.profil-container {
+    position: relative;
+    display: inline-block;
+}
+
+.profil-container:hover{
+ display: block; 
+}
+
+.user-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    padding: 20px;
+}
+
+.mujUcet {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 10px auto 10px auto;
+    padding: 15px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    width: calc(25% - 20px); 
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center;
+}
+
+
+
+.mujUcet h2 {
+    margin: 0 0 10px;
+}
+
+.mujUcet label {
+    margin-top: 10px; 
+}
+
+.mujUcet input[type="text"],
+.mujUcet input[type="email"] {
+    width: 100%; 
+    padding: 8px; 
+    margin: 5px 0; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+}
+
+.mujUcet input[type="submit"] {
+    background-color: #4CAF50; 
+    color: white; 
+    border: none; 
+    border-radius: 4px;
+    padding: 10px 15px; 
+    cursor: pointer; 
+    margin-top: 10px; 
+}
+
+.mujUcet input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+
+.register {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin: auto;
+}
+h1 {
+    text-align: center;
+    color: #333;
+}
+p {
+    margin: 10px 0;
+}
+input[type="text"],
+input[type="password"],[type="email"],[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+input[type="submit"] {
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+input[type="submit"]:hover {
+    background-color: #4cae4c;
+}
+
+h4{
+    color: red;
+}
+
+.hledacipanel img {
+    border-radius: 50px;
+    width: 500px;
+}
+
+.grid-auto{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    gap: 10px; 
+    margin-top: 20px; 
+}
+
+.grid-autoItem{
+    background-color: #f9f9f9; 
+    padding: 10px; 
+    border: 1px solid #ddd; 
+    border-radius: 10px; 
+}
+
+
+.obrazektext{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    position: relative;
+}
+.obrazektext button{    
+    position: absolute; 
+    top: 0px; 
+    right: 0px; 
+    background: none; 
+    border: none; 
+    cursor: pointer; 
+    color: #ff0000; 
+}
+
+
+.obrazektext .upravit{
+    margin-right: 70px;
+}
+
+
+.obrazektext1 {
+    margin-bottom: 30px;
+    padding: 5px;
+    text-align: left;
+}
+
+
+textarea {
+    width: 100%; 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    font-size: 16px; 
+    font-family: inherit; 
+    resize: none;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
+}
+
+
+.gallery {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    gap: 20px; 
+    padding: 20px;
+}
+.gallery img {
+    width: 100%;
+    height: 200px; 
+    object-fit: cover; 
+    border-radius: 5px;
+}
+
+.prava{
+text-align: center;
+color: #000;
+
+}
